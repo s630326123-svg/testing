@@ -65,7 +65,7 @@ async function loadTxtFile() {
         
         // 解析文字檔：假設每行一題，用 | 分隔
         // 格式：題目|選項A,選項B,選項C,選項D|答案索引(0-3)
-        const lines = text.split('\n').filter(line => line.trim() !== '');
+        const lines = split(/\r?\n/).filter(line => line.trim() !== '');
         allQuestions = lines.map(line => {
             const parts = line.split('|');
             return {
@@ -134,3 +134,4 @@ function changePage(step) {
 </script>
 </body>
 </html>
+
